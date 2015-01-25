@@ -4,7 +4,6 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "susy";
-//@import "breakpoint";
 @import "http://fonts.googleapis.com/css?family=Open+Sans";
 @import "http://allfont.ru/css/?fonts=droid-serif";
 @import "compass/utilities/general/clearfix";
@@ -23,290 +22,263 @@ $susy: (
   gutter-position: after, //inside,  (before | after | split | inside | inside-static )
   global-box-sizing: border-box,
 
-  //debug: (
-  //  image: show, // варианты: show | hide | show-columns | show-baseline
-  //  color: rgba(#66f, .5),
-  //  output: background,
-  //  toggle: top right,
-  //)
-  
 );
 
 @include border-box-sizing;
 $logo_len: 140px;
 
 @mixin title_position(){
-  text-align: center;
-  margin-bottom: 5.08%;/*65px*/
-  font-weight: bold;
-  font-size: 2.25em;
-  line-height: 70%; 
+    text-align: center;
+    margin-bottom: 5.08%;/*65px*/
+    font-weight: bold;
+    font-size: 2.25em;
+    line-height: 70%; 
 } 
-
-    /*@media (min-width: 481px) and (max-width: 768px){
-            
-      }
-          
-      @media (min-width: 769px) and (max-width: 1024px){
-          
-      }
-
-      @media (min-width: 1025px){
-          
-      }*/
-
-main.wrapper{
-    @include container;
-    @include clearfix;
-    .pre-header{  
-      //position: relative;  
-      header.header{
-        @include clearfix;// overflow: hidden;
-        @include span(full);
-        padding-top: 3.67%;
-        h1{
-          @include push(1);
-          max-width: $logo_len;
-          max-height: 71px;
-          @include clearfix;
-          float: left;
-        }
-        
-        nav.nav-main{
-                 
-          ul.mobile-main-menu{
-            padding-top: 2%;
-            @media (min-width: 481px){
-              display: none; 
-            }
-            //position: relative;
-            @include span(4 of 12 last);
-            li{
-              font-size: 1.35em;
-              //position: relative;
-              ul.mobile-menu{
-                display: none;
-                //position: absolute;
-                //top: 30px;
-                //left: 25px;
-                li{
-                  font-size: 0.75em;
-                }
-              }
-              &:hover {
-                ul.mobile-menu{
-                  display: block;
-                }
-              }
-            }
-          }//end ul.mobile-main-menu
-          
-          ul.main-menu{
-            display: none;
-            padding-top: 1%;
-            @media (min-width: 481px) and (max-width: 768px){
-              display: block; 
-              @include span(6 of 12 last);
-            }
-            
-            @media (min-width: 769px) and (max-width: 1024px){
-              display: block; 
-              @include span(6 of 12 last);
-            }
-
-            @media (min-width: 1025px){
-              display: block; 
-              @include span(5 of 12 last);
-            }
-            @include clearfix;//overflow: hidden;
-            
-              li{
-                display: inline;
-                margin-right: 2.6%;//30px;
-              }
-              li.active{
-                a{
-                  color: #fff;
-                }
-              }
-          }//end ul.main-menu
-        }//end nav
-      }//end header
-
-
-      h2.head-hello{
-        @include span(8 of 12);
-        @include push(2);
-        font-weight: bold;
-        text-align: center;
-        margin-top: 10%;
-        margin-bottom: 8%;
-        font-size: 2em; 
-        line-height: 100%;
-
-        @media (min-width: 481px) and (max-width: 768px){
-              font-size: 2.5em; 
-              line-height: 105%;
-        }
-            
-        @media (min-width: 769px) and (max-width: 1024px){
-            @include span(8 wider of 12);
-            @include push(1.7);
-            font-size: 3em; 
-            line-height: 110%;
-        }
-
-        @media (min-width: 1025px){
-            @include span(8 wider of 12);
-            @include push(1.7);
-            font-size: 4em; 
-            line-height: 115%;
-        }      
-      }//end h2
-    
-    .video {
-        @include span(full);
-        position: relative;
-        video{
-          position: absolute; 
-          top: 0px; 
-          left: 0px; 
-          min-width: 100%; 
-          min-height: 100%;
-          z-index: -1;
-          background: url(video/fon.png) no-repeat;
-          background-size: cover;
-          background-attachment: scroll;
-          
-        }
-    }//end .video
-
-    button.head-butt{
-      @include push(4.5);
-      border: none;
-      background:  url(../images/neddle.png) no-repeat;
-      background-position: center;
-      background-position-y: 0; 
-      a{
-        font: 1.35em 'Droid Serif', arial; color: #fff; line-height: 115%;
-      }
-      padding-top: 16%;
-      text-align: center;
-      margin-bottom: 20%;
-      @media (min-width: 481px) and (max-width: 768px){
-        @include push(5.47);
-        padding-top: 8%;
-        margin-bottom: 1%;
-      }
-            
-      @media (min-width: 769px) and (max-width: 1024px){
-        @include push(5.47);
-        padding-top: 9%;
-        margin-bottom: 3.3%;
-      }
-
-      @media (min-width: 1025px){
-        @include push(5.47);
-        padding-top: 7%;
-        margin-bottom: 4%;
-      }
-    }//end button
-  }//end pre-header
-/********************************/  
-/////////section.about///////////
-/*******************************/
-  section.about{
-    //position: absolute;
-    //top:  0px;
-    @include span(full);
-    padding-top: 9.23%;/*110px*/
-    padding-bottom: 9.23%;/*110px*/
-    background-color: #2c3e50;
-    //opacity: 0.7;//prozrachnost
-    h3{
-        @include title_position();
-    }
-
-    article.short-sumary{
-      @include span(10 of 12);
-      @include push(1);
-      p{
-        font: 1em 'Droid Serif', arial; line-height: 139%; 
-      }
-      @media (min-width: 481px){
-        @include span(8 of 12);
-        @include push(2);
-        p{
-          font-size: 1.3em; 
-        }
-      }
-      margin-bottom: 5.56%;
-    }//end article
-
-    ul.services-info{
-      @include clearfix;//overflow: hidden;
-      @include span(full);
-      
-      li{
-        text-align: center;
-        @include span(11 of 12);
-        @include push(1);
-        i{
-          border-radius: 50%;
-          border: 3px solid #fff;
-          margin-bottom: 8%;
-          padding: 20px;
-        }
-        h4{
-          margin-bottom: 5%;/*55px*/
-          font-size: 1em; 
-          line-height: 128%; 
-        }
-        p{
-          margin: 1.7%; /*5px*/
-          font: 1em 'Droid Serif', arial; line-height: 151%; 
-        }        
-      }//end li
-      
-
-      @media (min-width: 481px) and (max-width: 768px){
-        @include span(8 of 12);
-        @include push(2);
-      }
-
-      @media (min-width: 769px){
-        @include span(10 of 12);
-        @include push(1);
-        li{
-          display: inline;
-          @include span(3 of 10);
-          @include push(0);
-          
-          &:nth-child(2n+2){
-            @include span(2 of 10);
-            @include push(1);
-            i{
-              margin-bottom: 15%;
-            }
-          }
-          &:last-child{
-            @include push(1);
-          }
-        }//end li
-      }
-    }//end ul
-  }//end section about
-
-/************************************/  
-/////////section.portfolio///////////
-/***********************************/
-  @mixin browz-border-radius($radius) {
+@mixin browz-border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     -ms-border-radius: $radius;
     border-radius: $radius;
 
-  }
+}
+
+.pre-header{
+    position: relative;
+    video{
+        position: absolute; 
+        top: 0px; 
+        left: 0px; 
+        min-width: 100%; 
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        background-size: cover;
+        background-attachment: scroll;
+    }//end video
+
+    section.wrapp{   
+        header.header{
+            @include clearfix;
+            @include span(full);
+            padding-top: 3.67%;
+            h1{
+              @include push(1);
+              max-width: $logo_len;
+              max-height: 69px;
+              @include clearfix;
+              float: left;
+            }
+            
+            nav.nav-main{
+              ul.mobile-main-menu{
+                padding-top: 2%;
+                @media (min-width: 481px){
+                  display: none; 
+                }
+
+                @include span(4 of 12 last);
+                li{
+                  font-size: 1.35em;
+                  ul.mobile-menu{
+                    display: none;
+                    li{
+                      font-size: 0.75em;
+                    }
+                  }
+                  &:hover {
+                    ul.mobile-menu{
+                      display: block;
+                    }
+                  }
+                }
+              }//end ul.mobile-main-menu
+              
+              ul.main-menu{
+                display: none;
+                padding-top: 1%;
+                @media (min-width: 481px) and (max-width: 768px){
+                  display: block; 
+                  @include span(6 of 12 last);
+                }
+                
+                @media (min-width: 769px) and (max-width: 1024px){
+                  display: block; 
+                  @include span(6 of 12 last);
+                }
+
+                @media (min-width: 1025px){
+                  display: block; 
+                  @include span(5 of 12 last);
+                }
+                @include clearfix;
+                
+                  li{
+                    display: inline;
+                    margin-right: 2.6%;//30px;
+                    a:hover{
+                      color: #2c3e38;
+                    }
+                  }
+                  li.active{
+                    a{
+                      color: #fff;
+                    }
+                  }
+              }//end ul.main-menu
+            }//end nav
+        }//end header
+
+
+        h2.head-hello{
+            @include span(8 of 12);
+            @include push(2);
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10%;
+            margin-bottom: 8%;
+            font-size: 2em; 
+            line-height: 100%;
+
+            @media (min-width: 481px) and (max-width: 768px){
+                  font-size: 2.5em; 
+                  line-height: 105%;
+            }
+                
+            @media (min-width: 769px) and (max-width: 1024px){
+                @include span(8 wider of 12);
+                @include push(1.7);
+                font-size: 3em; 
+                line-height: 110%;
+            }
+
+            @media (min-width: 1025px){
+                @include span(8 wider of 12);
+                @include push(1.7);
+                font-size: 4em; 
+                line-height: 115%;
+            }      
+        }//end h2
+    
+        button.head-butt{
+            @include push(4.5);
+            border: none;
+            background:  url(../images/neddle.png) no-repeat;
+            background-position: center;
+            background-position-y: 0; 
+            a{
+               font: 1.35em 'Droid Serif', arial; color: #fff; line-height: 115%;
+            }
+            padding-top: 16%;
+            text-align: center;
+            margin-bottom: 20%;
+            @media (min-width: 481px) and (max-width: 768px){
+                @include push(5.47);
+                padding-top: 8%;
+                margin-bottom: 1%;
+            }
+                
+            @media (min-width: 769px) and (max-width: 1024px){
+                @include push(5.47);
+                padding-top: 9%;
+                margin-bottom: 3.3%;
+            }
+
+            @media (min-width: 1025px){
+                @include push(5.47);
+                padding-top: 7%;
+                margin-bottom: 4%;
+            }
+        }//end button
+    }//end wrapper*/
+}//end pre-header 
+/********************************/  
+/////////section.about///////////
+/*******************************/
+section.about{
+    @include span(full);
+    padding-top: 9.23%;/*110px*/
+    padding-bottom: 9.23%;/*110px*/
+    background-color: #2c3e50;
+    h3{
+        @include title_position();
+    }
+
+    article.short-sumary{
+        @include span(10 of 12);
+        @include push(1);
+        p{
+            font: 1em 'Droid Serif', arial; line-height: 139%; 
+        }
+        @media (min-width: 481px){
+            @include span(8 of 12);
+            @include push(2);
+            p{
+                font-size: 1.3em; 
+            }
+        }
+        margin-bottom: 5.56%;
+    }//end article
+
+    ul.services-info{
+        @include clearfix;
+        @include span(full);
+      
+        li{
+            text-align: center;
+            @include span(11 of 12);
+            @include push(1);
+            i{
+                @include browz-border-radius(50%);
+                behavior: url(/resources/PIE.htc);
+                border: 3px solid #fff;
+                margin-bottom: 8%;
+                padding: 20px;
+            }
+            h4{
+                margin-bottom: 5%;/*55px*/
+                font-size: 1em; 
+                line-height: 128%; 
+            }
+            p{
+                margin: 1.7%; /*5px*/
+                font: 1em 'Droid Serif', arial; line-height: 151%; 
+            }        
+        }//end li
+      
+
+        @media (min-width: 481px) and (max-width: 768px){
+            @include span(8 of 12);
+            @include push(2);
+        }
+
+        @media (min-width: 769px){
+            @include span(10 of 12);
+            @include push(1);
+            li{
+                display: inline;
+                @include span(3 of 10);
+                @include push(0);
+          
+                &:nth-child(2n+2){
+                    @include span(2 of 10);
+                    @include push(1);
+                    i{
+                        margin-bottom: 15%;
+                    }
+                }
+                &:last-child{
+                    @include push(1);
+                }
+            }//end li
+        }
+    }//end ul
+}//end section about
+
+/************************************/  
+/////////section.portfolio///////////
+/***********************************/
+
 
   section.portfolio{
     @include span(full);
@@ -329,6 +301,11 @@ main.wrapper{
           font-size: 1em;
           line-height: 80%; 
           padding: 0.44% 0.88%;/*5px 10px*/
+          &:hover{
+            color: #fff;
+            background-color: #2DCB71;
+            @include browz-border-radius(20px);
+          }
         }
 
         @media (min-width: 481px) and (max-width: 768px){
@@ -352,63 +329,113 @@ main.wrapper{
           color: #fff;
           background-color: #2DCB71;
           @include browz-border-radius(20px);
+
         }
       }
     }//end ul.portfolio-menu
     
-    ul.photo-list{
-      @include span(10 of 12);
-      @include push(1.5);
-      li{
-          img{
-            border: 1px solid #E9E9E9;
-            margin-bottom: 2.6%; 
-          } 
-          
+    ul.bloks-list{
+      @include push(0.5);
+      li {
+        border: 1px solid #e9e9e9;
+        padding: 10px;
+        margin-right: 0px;
+        .block-hover {
+          position: relative;
+          height: 260px;
+          width: 348px;
+          .view-project {
+            display: none;
+            position: absolute;
+            text-decoration: none;
+            cursor: pointer;
+            h4 {
+                margin: 30px 60px ;
+                font-size: 35px;
+            }
+            span {
+              @include browz-border-radius(20px);
+              padding: 10px 15px;
+              margin: 30px 80px ;
+              border: 1px solid #e9e9e9;
+              &:hover {
+                background-color: #34495e;
+              }
+            }
+          }
+          &:hover .view-project {
+            overflow: hidden;
+            display: block;
+            background: rgba(#34495e, 0.95);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
         }
+      }
+      
       @media (min-width: 481px) and (max-width: 768px){
         @include span(6 of 12);
         @include push(3);
+        li{
+              .view-project {
+                h4 {
+                  margin: 30px 75px ;
+                  font-size: 15px;
+
+                }
+                span {
+                  @include browz-border-radius(20px);
+                  padding: 5px 10px;
+                  margin: 30px 120px ;
+                  border: 1px solid #e9e9e9;
+                  font-size: 13px;
+                }
+              }
+        }
         
       }
           
       @media (min-width: 769px) and (max-width: 1024px){
-        @include span(10 of 12);
-        @include push(1.4);
+        @include span(8 of 12);
+        @include push(4);
         li{
           margin: 0 1% 0 1%;
           img{
             padding: 0.5%;
           } 
-          &.top-t{
-            display: inline;    
-          } 
-          &.midl{
-            display: inline;    
-          }
-          &.bot{
-            display: inline;
-          }
+          
         }
       }
 
       @media (min-width: 1025px){
-        @include span(full);
-        @include push(0);
-        li{
-          margin: 0 1% 0 1%;
-          img{
-            padding: 0.5%;
-          } 
-          &.top{
-            display: inline;    
-          } 
-          &.bottom{
-            display: inline;
+          @include span(10 of 12);
+          overflow: hidden;
+          width: span(12);
+          padding: gutter(8);
+          padding-bottom: 0; 
+          li {
+            @include gallery(4 of 12);
+            margin-bottom: gutter(8);
+            overflow: hidden;
+            .view-project {
+              h4 {
+                margin: 30px 60px ;
+                font-size: 35px;
+              }
+              span {
+                @include browz-border-radius(20px);
+                padding: 10px 15px;
+                margin: 30px 120px ;
+                border: 1px solid #e9e9e9;
+                font-size: 13px;
+              }
+            }
           }
-        }
-      }
-    }//end ul.photo-list
+        
+      }//end media
+    }//end ul.bloks-list
     
   }//section.portfolio
   
@@ -418,7 +445,6 @@ main.wrapper{
   section.team{
     @include span(full);
     background-color: #297FB9;
-    opacity: 0.7;
     padding-top: 5.56%;/*65px*/
     padding-bottom: 5.56%;
     
@@ -432,7 +458,7 @@ main.wrapper{
       text-align: center;
       margin-bottom: 10%;/*115px*/
       li{
-        margin-bottom: 3.16%;
+        margin-bottom: 5.16%;
         img{
           border: 4px solid #fff;
           @include browz-border-radius(49%);
@@ -442,22 +468,31 @@ main.wrapper{
           margin-bottom: 3.16%;
         }
         ul.social-networks{
-          @include span(4 of 9);
-          @include push(2);
+          @include span(full);
+          margin-top: 3.16%;
           li{
-            @include span(1 of 4);
+            text-align: center;            
             display: inline;
             i{
               border: 2px solid #fff;
-              padding: 5px;
+              padding: 10px;
+              width: 50px;
+              height: 50px;
               @include browz-border-radius(50%);
+              behavior: url(/resources/PIE.htc);
+              &:hover {
+                background-color: #2c3e38;
+                border-color: #e6e3e3;
+              }
             }
           }
         }
 
         @media (min-width: 481px) and (max-width: 768px){
             ul.social-networks{
-                @include push(2);
+                @include span(full);
+                margin-top: 3.16%;
+                text-align: center;
               }
         }
          @media (min-width: 769px){      
@@ -465,6 +500,7 @@ main.wrapper{
             display: inline;
             ul.social-networks{
               @include span(full);
+              text-align: center;
               li{
                 @include span(1 of 4);
               }
@@ -490,7 +526,7 @@ section.contact{
 
     p{
       @include span(6 of 12);
-      @include push(3);
+      @include push(4);
       margin-bottom: 6.41%;
       color: #2C3E50;
     }
@@ -498,19 +534,68 @@ section.contact{
     form{
       @include span(4 of 12);
       @include push(3);
+      .you-contact-info {
+        li {
+          margin: 10px;
+          input{
+            border: none;
+            border-bottom: 1px solid #2ecc71;
+            padding: 15px 0;
+            width: span(3 of 3);
+            &::-webkit-input-placeholder {
+              color: #2c3e50;
+              font-size: 1.4em;
+              line-height: 100%;
+            }
+          }
+          textarea {
+            border: none;
+            border-bottom: 1px solid #2ecc71;
+            padding-bottom: 3px;
+            margin-top: 10px;
+            resize: none;
+            height: 150px;
+            width: span(3 of 3);
+            &::-webkit-input-placeholder {
+              color: #2c3e50;
+              font-size: 1.4em;
+              font-family: arial; 
+            }
+          }
+        }
+      } 
+      button {
+        @include browz-border-radius(20px);
+        border: 1px solid #2ecc71;
+        background-color: #2ecc71;
+        color: #fff;
+        padding: 2%;
+        margin-top: 3%;
+        &:hover {
+          background-color: #2c3e38;
+          border-color: #2c3e38;
+        }
+      }
     }
     dl.our-contact{
       @include span(2 of 12);
       @include push(1);
+      color: #2C3E50;
+      dt{
+        font-size: 0.8em;
+        margin: 25px 0;
+      }
+      dd{
+        margin-bottom: 15px;
+      }
     }
   }//end section.contact
 /************************************/  
 /////////footer///////////
 /***********************************/
-  footer{
+footer{
     @include span(full);
     background-color: #2c3e50;
-    //opacity: 0.7;
     padding-bottom: 6.41%;
     a{
       @include push(1);
@@ -524,54 +609,62 @@ section.contact{
 
 
     ul{
-      @include span(full);
-      li{
-        @include span(3 of 12);
-        word-wrap: break-word;
-        p{
-          font-size: 0.8em;
-        }
-        i{
-          border: 2px solid #fff;
-          padding: 5px;
-          @include browz-border-radius(50px);
-        }
-        &:first-child{
-          @include push(0.5);
-        }
-        &:last-child{
-            @include span(5 of 12);  
-            ul{
-              li{
-                display: inline;
-                margin-right: 0.5%;
-              }
-            }         
-        }
-        
-      }
-      @media (min-width: 481px){
+        @include span(full);
         li{
-          display: inline;
-          @include span(2 of 10);
-          @include push(1);
-          
-          i{
-            padding: 10px;
-          }
-          &:first-child{
-              @include push(1.2);          
-          }
-          &:last-child{
-              @include span(3 of 10);  
-              ul{
-                li{
-                  margin-right: 2.5%;
+            @include span(3 of 12);
+            word-wrap: break-word;
+            p{
+              font-size: 0.8em;
+            }
+            a{
+               
+                i{
+                    border: 2px solid #fff;
+                    width: 50px;
+                    height: 50px;
+                    padding: 11px;
+                    @include browz-border-radius(50%);
+                    behavior: url(/resources/PIE.htc);
+                    &:hover {
+                        background-color: #2c3e38;
+                        border-color: #e6e3e3;
+                    }
                 }
-              }         
-          }
-        }
-      }//end media
+            }
+            &:first-child{
+                @include push(0.5);
+            }
+            &:last-child{
+                @include span(5 of 12);  
+                ul{
+                    li{
+                        display: inline;
+                        margin-right: 0.5%;
+                    }
+                }         
+            }   
+        }//end li
+        @media (min-width: 481px){
+            li{
+                display: inline;
+                @include span(2 of 10);
+                @include push(1);
+          
+                i{
+                    padding: 10px;
+                }
+                &:first-child{
+                    @include push(1.2);          
+                }
+                &:last-child{
+                    @include span(3 of 10);  
+                    ul{
+                        li{
+                            margin-right: 2.5%;
+                        }
+                    }         
+                }
+            }
+        }//end media
     }//end ul
-  }
-}/*end wrapper*/
+}//end footer
