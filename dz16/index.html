@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JS</title>
+  <link rel="stylesheet" href="css/style.css" /> 
+  <script>
+        function bornDay(obj){
+            var days = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"];
+            var d = obj.day.value;
+            var m = obj.month.value;
+            var y = obj.year.value;
+            
+
+            if(m <= 2){
+                y--;
+                d +=3;
+            }
+
+            var w = (d + y + Math.floor(y/4) - Math.floor(y/100) + Math.floor(y/400) + Math.floor((31*m + 10)/12))%7;
+            obj.rez.value=days[w];
+              
+        }
+  </script>
+</head>
+
+  <body>
+    <div class="wrapper">
+           
+            <h3>Твій день!</h3>
+            <p>Введи дату сового народження та дізнайся який день тижня тоді був!!!</p>
+
+
+            <form name="yorday">
+                
+                <label for="day">День: </label>
+                <input type="text" name="day" id="day" /> 
+
+                <label for="month">Місяць: </label>
+                <input type="text" name="month" id="month" /> 
+
+                <label for="year">Рік: </label>
+                <input type="text" name="year" id="year" /> 
+                
+                <input type="button" value="Ви народились в" onclick="bornDay(yorday);" /> 
+                <input type="text" name="rez" />
+                <input type="reset" value="Обновити" /> 
+                
+           </form>
+           
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+@import "resett";
+@import "susy";
+@import "compass/utilities/general/clearfix";
+
+
+// Susy Grid Config
+// For more information: http://susydocs.oddbird.net/en/latest/settings/
+
+$susy: (
+  columns: 12,
+  gutters: 0.2821, //30px
+  container: 1170px,
+  math: fluid,
+  output: float,
+  gutter-position: after, //inside,  (before | after | split | inside | inside-static )
+  global-box-sizing: border-box,
+
+  
+);
+
+
+
+    .wrapper{   
+        @include container;
+        margin-top: 50px;
+
+        h3, p, form{
+            color: #363636;
+            margin-bottom: 30px;
+        }
+        h3{
+            @include push(5);
+        }
+        p{
+            @include push(2.5);
+        }
+
+        form{
+           @include push(1);
+
+        }
+    }//end wrapper*/
+
