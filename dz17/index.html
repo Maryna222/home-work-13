@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JS</title>
+  <link rel="stylesheet" href="css/style.css" /> 
+  <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+  <body>
+    <div class="wrapper">
+           
+            <h3>Твій день!</h3>
+            <p>Введи дату сового народження та дізнайся який день тижня тоді був!!!</p>
+
+
+            <form name="yorday" id="bornDay" action="#" onsubmit="return validateForm()">
+                
+                <label for="day">День: </label>
+                <input type="text" name="day" id="day" /> 
+
+                <label for="month">Місяць: </label>
+                <input type="text" name="month" id="month" /> 
+
+                <label for="year">Рік: </label>
+                <input type="text" name="year" id="year" /> 
+                
+                <input type="submit" value="Ви народились в" /> 
+                <input type="text" name="rez" />
+                <input type="reset" value="Обновити" /> 
+                
+           </form>
+           
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
